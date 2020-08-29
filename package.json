@@ -15,7 +15,6 @@
     "docs": "typedoc --out docs src",
     "lint": "tslint --project tsconfig.json -c tslint.json 'src/**/*.ts'",
     "precommit": "yarn lint",
-    "prepare": "yarn build",
     "prettier": "prettier --config package.json src/**/*.ts",
     "semantic-release": "semantic-release",
     "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
