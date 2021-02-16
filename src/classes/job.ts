@@ -86,7 +86,14 @@ export class Job<T = any, R = any, N extends string = string> {
     const client = await queue.client;
 
     const jobInstances = jobs.map(
-      job => new Job<T, R, N>(queue, job.name, job.data, job.opts),
+      job =>
+        new Job<T, R, N>(
+          queue,
+          job.name,
+          job.data,
+          job.opts,
+          job.opts && job.opts.jobId,
+        ),
     );
 
     const multi = client.multi();
